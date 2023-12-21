@@ -6,7 +6,7 @@ class Movie(db.Model):
     """Model for movies"""
     __tablename__ = 'movies'
 
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     title = db.Column(db.String, unique=True, nullable=False)
     description = db.Column(db.String)
     trailer = db.Column(db.String)
@@ -27,4 +27,3 @@ class MovieSchema(Schema):
     trailer = fields.Str()
     year = fields.Int()
     rating = fields.Float()
-
